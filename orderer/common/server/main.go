@@ -538,6 +538,7 @@ func initializeGrpcServer(conf *localconfig.TopLevel, serverConfig comm.ServerCo
 	return grpcServer
 }
 
+// 成员服务提供者(MSP)管理用户id，并对网络中的所有参与者进行身份验证。一个Fabric区块链网络可以由一个或多个MSPs控制。这提供了成员操作的模块化，以及跨不同成员标准和体系结构的互操作性
 func initializeLocalMsp(conf *localconfig.TopLevel) {
 	// Load local MSP
 	err := mspmgmt.LoadLocalMsp(conf.General.LocalMSPDir, conf.General.BCCSP, conf.General.LocalMSPID)
